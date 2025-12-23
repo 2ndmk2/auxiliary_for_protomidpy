@@ -42,7 +42,7 @@ casa -c correct_weight_ms.py　(ターミナルでCASAを開かず打つ）
 - Producing Residual Measurement set
 ```bash
 # 1) MS → NPZ 変換
-casa -c ms_to_npz_spw.py　
+casa -c ms_to_npz_for_spw.py
 
 # 2) protomidpyのmodel calc (MSからmodelを引くために必須)
 python model_calc_spw.py

@@ -37,7 +37,7 @@ casa -c correct_weight_ms.py  # Run this directly from the terminal without laun
 - Replace the MS filename, output filename, and disk geometry with your own values.
 - You can use `average_ms.py` to average the MS and reduce its size, which makes the analysis easier.
 
-- Producing Residual Measurement set
+## Producing Residual Measurement set
 ```bash
 # 1) Convert MS to NPZ
 casa -c ms_to_npz_for_spw.py

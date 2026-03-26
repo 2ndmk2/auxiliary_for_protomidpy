@@ -103,7 +103,7 @@ def compute_sigma_bias(visfile, dx_arcsec, dy_arcsec, cosi, pa, q_min=100, n_gri
     """
     #load data
     u, v, vis, wgt, _ = load_obsdata(visfile)
-    dx, dy = dx_arcsec * ARCSEC_TO_RAD * 0.001, dy_arcsec * ARCSEC_TO_RAD * 0.001
+    dx, dy = dx_arcsec * ARCSEC_TO_RAD , dy_arcsec * ARCSEC_TO_RAD 
 
     #deproject q and phase shift
     q, vis_mod = deproject_uv_to_q(u, v, vis, cosi, pa, dx, dy)
@@ -148,10 +148,10 @@ if __name__ == '__main__':
     # dx_arcsec, dy_arcsec = disk centers (RA, Dec) in arcsec
     # cosi = cosine of inclination
     # pa (in unit of radian)
-	dx_arcsec, dy_arcsec, cosi, pa = 1.9 * 0.001,-2.5* ARCSEC_TO_RAD * 0.001, np.cos(34.97 * np.pi/180.0),85.76 * np.pi/180.0
+	dx_arcsec, dy_arcsec, cosi, pa = 1.9 * 0.001,-2.5* 0.001, np.cos(34.97 * np.pi/180.0),85.76 * np.pi/180.0
 
     # Main
-	q_bin, vis_bin, vis_model_bin, q_sigma_grid, sigma_factor_grid, sigma_factor_grid_i = compute_sigma_bias(visfile, dx_arcsec* ARCSEC_TO_RAD, dy_arcsec* ARCSEC_TO_RAD, cosi, pa, q_min=100, n_grid=1000)
+	q_bin, vis_bin, vis_model_bin, q_sigma_grid, sigma_factor_grid, sigma_factor_grid_i = compute_sigma_bias(visfile, dx_arcsec, dy_arcsec, cosi, pa, q_min=100, n_grid=1000)
 
 	# Weight bias
 	weight_factor = np.median(sigma_factor_grid)**2  ## only real part but may use imaginary part

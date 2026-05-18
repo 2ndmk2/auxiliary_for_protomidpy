@@ -1,4 +1,5 @@
 # Auxiliary tools for protomidpy
+This is a set of auxiliary files for protomidpy https://github.com/2ndmk2/protomidpy. 
 
 ### Weight correction
 Code for creating `.npz` files from ALMA Measurement Sets (MS), and for estimating and correcting biases in `WEIGHT` using disk geometry.
